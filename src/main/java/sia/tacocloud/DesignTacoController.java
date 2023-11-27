@@ -57,6 +57,7 @@ public class DesignTacoController {
 
     @GetMapping
     public String showDesignForm() {
+        // the String is the name of the view that will be displayed
         return "design";
     }
 
