@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 import sia.tacocloud.Ingredient;
 import sia.tacocloud.Ingredient.Type;
-import sia.tacocloud.IngredientRepository;
+import sia.tacocloud.data.IngredientRepository;
 
 @Component
 public class IngredientByIdConverter implements Converter<String, Ingredient> {
