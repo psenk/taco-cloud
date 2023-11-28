@@ -1,4 +1,4 @@
-package sia.tacocloud;
+package sia.tacocloud.data;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -7,6 +7,8 @@ import java.util.Optional;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+
+import sia.tacocloud.Ingredient;
 import sia.tacocloud.data.IngredientRepository;
 
 @Repository
@@ -40,4 +42,5 @@ public class JdbcIngredientRepository implements IngredientRepository {
         jdbcTemplate.update("INSERT INTO Ingredient (id, name, type) VALUES (?, ?, ?)", ingredient.getId(), ingredient.getName(), ingredient.getType().toString());
         return ingredient;
     }
+
 }
