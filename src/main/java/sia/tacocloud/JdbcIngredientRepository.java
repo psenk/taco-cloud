@@ -15,12 +15,13 @@ public class JdbcIngredientRepository implements IngredientRepository {
 
     private JdbcTemplate jdbcTemplate;
 
+    @Autowired
     public JdbcIngredientRepository(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
     @Override
-    public Iterable<Ingredient> findAll() {
+    public List<Ingredient> findAll() {
         return jdbcTemplate.query("SELECT id, name, type FROM Ingredient", this::mapRowToIngredient);
     }
 
